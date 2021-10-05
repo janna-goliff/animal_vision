@@ -17,15 +17,15 @@ decr_ch_lut_by_5 = _create_LUT_8UC1([0, 64, 128, 192, 256], [0, 59, 123, 187, 19
 
 class Camera(object):
     def __init__(self, animal):
-        self.videoStream = cv2.VideoCapture(0)
+        self.videoStream = cv2.VideoCapture(1)
         self.animal = animal
         self.endStream = False
 
-    # def __del__(self):
-    #     # release webcam
-    #     self.videoStream.release()
-    #     # closes windows from imshow()
-    #     cv2.destroyAllWindows()
+    def __del__(self):
+        # release webcam
+        self.videoStream.release()
+        # closes windows from imshow()
+        cv2.destroyAllWindows()
 
     def startStream(self):
         self.endStream = False
