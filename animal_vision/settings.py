@@ -25,9 +25,9 @@ MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 SECRET_KEY = '72&=4(06n9bb8(+m-#i3doi*ff#6#=d$!+&zht16=ndw_y&^oh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://animal_vision.herokuapp.com']
+ALLOWED_HOSTS = ['https://animal-vision.herokuapp.com', 'http://127.0.0.1:8000/']
 
 
 # Application definition
