@@ -1,0 +1,89 @@
+{% load static %}
+<html>
+    <head>
+        <title>animal vision</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'vision_style.scss' %}">
+    </head>
+    <body style="width: 100%; height: 100%; margin: 0; ">
+        <div class="main" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+            <div class="rainbow"></div>
+            <div class="rainbow_desaturated"></div>
+            <div style="font-size: 24px; margin: 20px 0;"><strong>you are a:</strong> {{isAnimal}}</div>
+                {% if isAnimal == "cat" %}
+                    <div class="image_container cat">
+                        <img width="600px" height="350px" src="{% url 'camera_feed' isAnimal %}"> 
+                    </div>
+                {% elif isAnimal == "cow"%}
+                    <div class="image_container cow">
+                        <img width="900px" height="350px" src="{% url 'camera_feed' isAnimal %}"> 
+                    </div>
+                {% elif isAnimal == "whale"%}
+                    <div class="image_container">
+                        <img src="{% url 'camera_feed' isAnimal %}"> 
+                    </div>
+                {% elif isAnimal == "rattlesnake"%}
+                    <div class="image_container">
+                        <img src="{% url 'camera_feed' isAnimal %}"> 
+                    </div>
+                {% elif isAnimal == "alien"%}
+                    <div class="image_container">
+                        <img src="{% url 'camera_feed' isAnimal %}"> 
+                    </div>
+                {% endif %}
+            <div style="display: flex; flex-direction: column;">
+                <div class="life_header">Life as a {{isAnimal}}</div>
+                <div style="display: flex; align-items: flex-start; justify-content: center;">
+                    <div class="card">
+                        <div class="header">senses</div>
+                        <div>
+                            {% if isAnimal == "cat" %}
+                                as a cat, your sense of hearing and smell would increase. your reflexes would sharpen. you would also use your whiskers to navigate space
+                            {% elif isAnimal == "cow"%}
+                                as a cow, your vision is a little blurry, but it's one of your most important senses. hearing and smell may also play a role. as a prey animal, you are afraid of the unfamiliar
+                            {% elif isAnimal == "whale"%}
+                                as a whale, your sense of hearing would be used to communicate through complex songs with other whales. you likely have no sense of smell, and little if any sense of taste
+                            {% elif isAnimal == "rattlesnake"%}
+                                as a rattlesnake, you're endothermic- you can regulate your own body temperature depending on exposure to heat. you also have heat sensitive pits between your eyes that let you see a thermal image of your surroundings
+                            {% elif isAnimal == "alien"%}
+                                ?
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">daily life</div>
+                        <div>
+                            {% if isAnimal == "cat" %}
+                                if you were a housecat, your days would be spent wandering different rooms, jumping from different surfaces and causing mischief. 35% of all US households have a cat
+                            {% elif isAnimal == "cow"%}
+                                if you were a cow, you likely live on a beef or dairy farm. depending on the quality of the farm, you may spend your days wandering a field, or trapped inside a cage. 
+                            {% elif isAnimal == "whale"%}
+                                if you were a whale, your days would be spent wandering the ocean. you might be in a pod of whales, getting a chance to socialize and hunt together
+                            {% elif isAnimal == "rattlesnake"%}
+                                if you were a rattlesnake, your days might be filled basking in the sun. if you are, you'll be found in open areas with easy access to heat, such as pathways and other clearings 
+                            {% elif isAnimal == "alien"%}
+                                ?
+                            {% endif %}
+                        </div>
+                    
+                    </div>
+                    <div class="card">
+                        <div class="header">autonomy</div>
+                        <div>
+                            {% if isAnimal == "cat" %}
+                                you’ll live a relatively autonomous lifestyle, unless you’re in a shelter waiting to be adopted. around 3 million cats enter US shelters each year.
+                            {% elif isAnimal == "cow"%}
+                               you'll likely have little control over your own fate. there are an estimated 1 billion cattle worldwide, used for breeding, milking, or slaughter
+                            {% elif isAnimal == "whale"%}
+                                you'll likely live an autonomous lifestyle, but threats of whale hunting and climate change might change that. you're endangereed, and roughly 1,000 whales are hunted each year
+                            {% elif isAnimal == "rattlesnake"%}
+                                in the wild, you'll have autonomy, but will have to be weary of predators. only 20% of rattlesnakes make it to their second year. in captivity, you'll likely live life inside a tank
+                            {% elif isAnimal == "alien"%}
+                                ?
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
