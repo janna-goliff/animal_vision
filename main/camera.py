@@ -21,11 +21,11 @@ class Camera(object):
         self.animal = animal
         self.endStream = False
 
-    def __del__(self):
-        # release webcam
-        self.videoStream.release()
-        # closes windows from imshow()
-        cv2.destroyAllWindows()
+    # def __del__(self):
+    #     # release webcam
+    #     self.videoStream.release()
+    #     # closes windows from imshow()
+    #     cv2.destroyAllWindows()
 
     def startStream(self):
         self.endStream = False
