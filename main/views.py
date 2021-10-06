@@ -4,15 +4,15 @@ from main.camera import Camera
 
 # heavily references https://github.com/sawardekar/Django_VideoStream/blob/master/streamapp/views.py
 
-def cameraGenerator(camera):
-    while(True):
-        frame = camera.getVideoFrame()
-        yield(b'--frame\r\n'
-				b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+# def cameraGenerator(camera):
+#     while(True):
+#         frame = camera.getVideoFrame()
+#         yield(b'--frame\r\n'
+# 				b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
     
-def camera_feed(request, animal):
-	return StreamingHttpResponse(cameraGenerator(Camera(animal)),
-					content_type='multipart/x-mixed-replace; boundary=frame')
+# def camera_feed(request, animal):
+# 	return StreamingHttpResponse(cameraGenerator(Camera(animal)),
+# 					content_type='multipart/x-mixed-replace; boundary=frame')
 
 # Create your views here.
 def landing(request):

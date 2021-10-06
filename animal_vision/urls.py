@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import vision_view, camera_feed, landing, main, sources
+from main.views import vision_view, landing, main, sources
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,5 +23,5 @@ urlpatterns = [
     path('main', main, name='main'),
     path('sources', sources, name='main'),
     path('vision', vision_view, name='vision'),
-    path('camera_feed/<str:animal>', camera_feed, name='camera_feed'),
+    #path('camera_feed/<str:animal>', camera_feed, name='camera_feed'),
 ]

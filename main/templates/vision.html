@@ -11,23 +11,23 @@
             <div style="font-size: 24px; margin: 20px 0;"><strong>you are a:</strong> {{isAnimal}}</div>
                 {% if isAnimal == "cat" %}
                     <div class="image_container cat">
-                        <img width="600px" height="350px" src="{% url 'camera_feed' isAnimal %}"> 
+                        <img width="600px" height="350px" src="{% static 'cat_gif.gif' %}"> 
                     </div>
                 {% elif isAnimal == "cow"%}
                     <div class="image_container cow">
-                        <img width="900px" height="350px" src="{% url 'camera_feed' isAnimal %}"> 
+                        <img width="900px" height="350px" src="{% static 'cow_gif.gif' %}"> 
                     </div>
                 {% elif isAnimal == "whale"%}
                     <div class="image_container">
-                        <img src="{% url 'camera_feed' isAnimal %}"> 
+                        <img src="{% static 'whale_gif.gif' %}"> 
                     </div>
                 {% elif isAnimal == "rattlesnake"%}
                     <div class="image_container">
-                        <img src="{% url 'camera_feed' isAnimal %}"> 
+                        <img src="{% static 'snake_gif.gif' %}"> 
                     </div>
                 {% elif isAnimal == "alien"%}
                     <div class="image_container">
-                        <img src="{% url 'camera_feed' isAnimal %}"> 
+                        <img src=""> 
                     </div>
                 {% endif %}
             <div style="display: flex; flex-direction: column;">
