@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http.response import StreamingHttpResponse
-from main.camera import Camera
 
 # heavily references https://github.com/sawardekar/Django_VideoStream/blob/master/streamapp/views.py
 
